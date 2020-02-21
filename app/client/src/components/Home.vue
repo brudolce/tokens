@@ -13,13 +13,13 @@
         </div>
     </div>
     <div class="pictures">
-      <img  width='620.25px' height='877.25px' v-for='(value,index) in pictures' :src='value' :alt='index' :key='index'>
+      <img  width='1240.5px' height='1754.5px' v-for='(value,index) in pictures' :src='value' :alt='index' :key='index'>
     </div>
     <div v-if='highlights'>
       <div class='highlight'
             v-for='(element,index) in highlights'
             :key='index'
-            v-bind:style="{ 'left': element.x1/4  + 'px', 'width': ((element.x2 - element.x1)/4) + 'px', 'top': (element.y2/4) + ((element.page-1)*877.25) + 50 + 'px', 'height': 7 + 'px' }"
+            v-bind:style="{ 'left': element.x1/2  + 'px', 'width': ((element.x2 - element.x1)/2) + 'px', 'top': (element.y2/2) + ((element.page-1)*1754.5) + 50 + 'px', 'height': 14 + 'px' }"
           >
       </div>
     </div>
@@ -76,7 +76,7 @@ export default {
 .highlight{
   position:absolute;
   background-color: yellow;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 </style>
