@@ -24,7 +24,7 @@ import axios from 'axios'
 // <div class='highlight'
 //       v-for='(element,index) in highlights'
 //       :key='index'
-//       v-bind:style="{ 'width': ((element.x2 - element.x1)/4) + 'px', 'top': (element.y2/4) + 50 + 'px', 'height': (element.y2-element.y1/4) + 'px' }"
+//       v-bind:style="{ 'width': ((element.x2 - element.x1)/4) + 'px', 'top': (element.y2/4 * element.page) + 50 + 'px', 'height': (element.y2-element.y1/4) + 'px' }"
 //     >
 // </div>
 
