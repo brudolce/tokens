@@ -13,7 +13,15 @@
         </div>
     </div>
     <div class="pictures">
-      <img  v-for='(value,index) in pictures' :src='value' width='620.25' :alt='index' :key='index'>
+      <img  width='620.25px' height='877.25px' v-for='(value,index) in pictures' :src='value' :alt='index' :key='index'>
+    </div>
+    <div v-if='highlights'>
+      <div class='highlight'
+            v-for='(element,index) in highlights'
+            :key='index'
+            v-bind:style="{ 'left': element.x1/4  + 'px', 'width': ((element.x2 - element.x1)/4) + 'px', 'top': (element.y2/4) + ((element.page-1)*877.25) + 50 + 'px', 'height': 7 + 'px' }"
+          >
+      </div>
     </div>
   </div>
 </template>
@@ -21,20 +29,13 @@
 <script>
 import axios from 'axios'
 
-// <div class='highlight'
-//       v-for='(element,index) in highlights'
-//       :key='index'
-//       v-bind:style="{ 'left': element.x2/4  + 'px', 'width': ((element.x2 - element.x1)/4) + 'px', 'top': (element.y2/4 * element.page) + 50 + 'px', 'height': (element.y2-element.y1/4) + 'px' }"
-//     >
-// </div>
-
 export default {
   data () {
     return {
       text: '',
       tokens: '',
       pictures: Array.from({ length: 11 }, (_, index) => 'http://localhost:5000/api/image/' + (1 + index)),
-      highlights: []
+      highlights: false
     }
   },
   methods: {
@@ -52,9 +53,6 @@ export default {
           console.error(error);
         })
     }
-  },
-  updated () {
-    this.highlights = Object.values(this.tokens)
   }
 }
 </script>
@@ -76,8 +74,9 @@ export default {
   width: 30vw
 }
 .highlight{
-  position:static;
+  position:absolute;
   background-color: yellow;
+  opacity: 0.3;
 }
 
 </style>
