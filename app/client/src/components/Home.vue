@@ -19,7 +19,7 @@
       <div class='highlight'
             v-for='(element,index) in highlights'
             :key='index'
-            v-bind:style="{ 'left': element.x1/2  + 'px', 'width': ((element.x2 - element.x1)/2) + 'px', 'top': (element.y2/2) + ((element.page-1)*1754.5) + 50 + 'px', 'height': 14 + 'px' }"
+            v-bind:style="{ 'left': element.x1/2  + 'px', 'width': ((element.x2 - element.x1)/2) + 'px', 'top': (element.y2/2) + ((element.page-1)*1754.5) + 50 + 'px', 'height': ((element.y1 - element.y2)/2) + 'px' }"
           >
       </div>
     </div>
