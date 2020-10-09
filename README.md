@@ -1,4 +1,13 @@
 # tokens
 
+
+##### the coordinates on the token should be highlighted on the images
+
 exercise with inline CSS over vue.js
-A flask server offers images and a .json file with cordinates, to be highlighted on the images.
+
+A flask server offers 3 'GET' endpoints:
+  - /api/images/:index
+  - /api/tokens/:key
+  - /
+  
+  what should we do with these?
